@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-label="Ilustração de flor de orquídea">
+  <defs>
+    <linearGradient id="petal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fdfcf7"/>
+      <stop offset="1" stop-color="#e8dcc3"/>
+    </linearGradient>
+    <linearGradient id="petalShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4efe0"/>
+      <stop offset="1" stop-color="#cdc2a2"/>
+    </linearGradient>
+    <linearGradient id="lipGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e6cfa4"/>
+      <stop offset="0.5" stop-color="#c39a4b"/>
+      <stop offset="1" stop-color="#7d5c21"/>
+    </linearGradient>
+    <radialGradient id="softGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6f1e5" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#f6f1e5" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <circle cx="160" cy="160" r="150" fill="url(#softGlow)"/>
+
+  <g transform="translate(160 160)">
+    <!-- Sépalas -->
+    <ellipse cx="0" cy="-92" rx="38" ry="58" fill="url(#petalShade)"/>
+    <ellipse cx="-66" cy="-24" rx="34" ry="56" fill="url(#petalShade)" transform="rotate(32)"/>
+    <ellipse cx="66" cy="-24" rx="34" ry="56" fill="url(#petalShade)" transform="rotate(-32)"/>
+    <ellipse cx="0" cy="84" rx="37" ry="54" fill="url(#petalShade)"/>
+
+    <!-- Pétalas laterais -->
+    <ellipse cx="-84" cy="26" rx="62" ry="46" fill="url(#petal)" transform="rotate(24)"/>
+    <ellipse cx="84" cy="26" rx="62" ry="46" fill="url(#petal)" transform="rotate(-24)"/>
+
+    <!-- Nervuras -->
+    <g stroke="#cdc2a2" stroke-width="1.1" fill="none" opacity="0.65">
+      <path d="M0 -92 C-5 -66 -5 -44 0 -24"/>
+      <path d="M0 -92 C6 -66 6 -44 0 -24"/>
+      <path d="M-66 -24 C-84 -52 -92 -74 -88 -96" transform="rotate(32)"/>
+      <path d="M-66 -24 C-46 -38 -34 -46 -24 -52" transform="rotate(32)"/>
+      <path d="M66 -24 C84 -52 92 -74 88 -96" transform="rotate(-32)"/>
+      <path d="M66 -24 C46 -38 34 -46 24 -52" transform="rotate(-32)"/>
+      <path d="M0 84 C-5 62 -5 44 0 26"/>
+      <path d="M0 84 C6 62 6 44 0 26"/>
+      <path d="M-84 26 C-104 -4 -110 -30 -104 -56" transform="rotate(24)"/>
+      <path d="M-84 26 C-56 10 -42 0 -34 -12" transform="rotate(24)"/>
+      <path d="M84 26 C104 -4 110 -30 104 -56" transform="rotate(-24)"/>
+      <path d="M84 26 C56 10 42 0 34 -12" transform="rotate(-24)"/>
+    </g>
+
+    <!-- Labelo -->
+    <path d="M0 -8 C-18 -18 -28 -5 -23 10 C-18 28 0 44 0 44 C0 44 18 28 23 10 C28 -5 18 -18 0 -8 Z"
+          fill="url(#lipGrad)" stroke="#7d5c21" stroke-width="1.2"/>
+    <path d="M0 3 C-6 10 -6 24 0 31 C6 24 6 10 0 3 Z" fill="#7d5c21" opacity="0.6"/>
+    <circle cx="0" cy="-5" r="9" fill="#b08a3e"/>
+    <circle cx="0" cy="-5" r="4" fill="#7d5c21" opacity="0.7"/>
+  </g>
+</svg>

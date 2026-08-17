@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" role="img" aria-label="Capa do e-book Orquídeas — Princípios básicos para cultivar">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#143322"/>
+      <stop offset="0.55" stop-color="#163523"/>
+      <stop offset="1" stop-color="#0c2013"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.36" r="0.6">
+      <stop offset="0" stop-color="#2a5739" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#0c2013" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="goldBar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e6cfa4"/>
+      <stop offset="0.5" stop-color="#c39a4b"/>
+      <stop offset="1" stop-color="#8a6423"/>
+    </linearGradient>
+    <linearGradient id="petal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fdfcf7"/>
+      <stop offset="1" stop-color="#e8dcc3"/>
+    </linearGradient>
+    <linearGradient id="petalShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4efe0"/>
+      <stop offset="1" stop-color="#cdc2a2"/>
+    </linearGradient>
+    <linearGradient id="lipGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e6cfa4"/>
+      <stop offset="0.5" stop-color="#c39a4b"/>
+      <stop offset="1" stop-color="#7d5c21"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Fundo -->
+  <rect width="400" height="600" fill="url(#bg)"/>
+  <rect width="400" height="600" fill="url(#glow)"/>
+
+  <!-- Moldura dupla dourada -->
+  <rect x="14" y="14" width="372" height="572" rx="5" fill="none" stroke="#c39a4b" stroke-width="1.6"/>
+  <rect x="21" y="21" width="358" height="558" rx="3" fill="none" stroke="#c39a4b" stroke-width="0.8" opacity="0.55"/>
+
+  <!-- Filete dourado no topo -->
+  <rect x="120" y="44" width="160" height="2" fill="url(#goldBar)"/>
+
+  <!-- ==================== FLOR DE ORQUÍDEA ==================== -->
+  <g transform="translate(200 232)" opacity="0.96">
+    <!-- Sépalas -->
+    <ellipse cx="0" cy="-70" rx="30" ry="46" fill="url(#petalShade)" transform="rotate(0)"/>
+    <ellipse cx="-50" cy="-18" rx="27" ry="44" fill="url(#petalShade)" transform="rotate(32)"/>
+    <ellipse cx="50" cy="-18" rx="27" ry="44" fill="url(#petalShade)" transform="rotate(-32)"/>
+    <ellipse cx="0" cy="64" rx="29" ry="42" fill="url(#petalShade)"/>
+
+    <!-- Pétalas laterais -->
+    <ellipse cx="-64" cy="20" rx="48" ry="36" fill="url(#petal)" transform="rotate(24)"/>
+    <ellipse cx="64" cy="20" rx="48" ry="36" fill="url(#petal)" transform="rotate(-24)"/>
+
+    <!-- Nervuras das pétalas -->
+    <g stroke="#cdc2a2" stroke-width="0.9" fill="none" opacity="0.7">
+      <path d="M-64 20 C-80 -6 -84 -28 -78 -46" transform="rotate(24)"/>
+      <path d="M-64 20 C-40 6 -30 -6 -26 -16" transform="rotate(24)"/>
+      <path d="M64 20 C80 -6 84 -28 78 -46" transform="rotate(-24)"/>
+      <path d="M64 20 C40 6 30 -6 26 -16" transform="rotate(-24)"/>
+      <path d="M0 -70 C-4 -48 -4 -30 0 -16"/>
+      <path d="M0 64 C-4 46 -4 32 0 20"/>
+    </g>
+
+    <!-- Labelo (lábio) -->
+    <path d="M0 -6 C-14 -14 -22 -4 -18 8 C-14 22 0 34 0 34 C0 34 14 22 18 8 C22 -4 14 -14 0 -6 Z"
+          fill="url(#lipGrad)" stroke="#7d5c21" stroke-width="1"/>
+    <path d="M0 2 C-5 8 -5 18 0 24 C5 18 5 8 0 2 Z" fill="#7d5c21" opacity="0.65"/>
+    <!-- Coluna -->
+    <circle cx="0" cy="-4" r="7" fill="#b08a3e"/>
+  </g>
+
+  <!-- ==================== TIPOGRAFIA DA CAPA ==================== -->
+  <text x="200" y="452" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
+        font-size="40" letter-spacing="4" fill="#f6f1e5" font-weight="600">ORQUÍDEAS</text>
+
+  <text x="200" y="484" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
+        font-size="14.5" letter-spacing="1.5" fill="#c39a4b">PRINCÍPIOS BÁSICOS PARA CULTIVAR</text>
+
+  <!-- Filete dourado na base -->
+  <rect x="130" y="536" width="140" height="2" fill="url(#goldBar)"/>
+  <text x="200" y="560" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
+        font-size="10.5" letter-spacing="3" fill="#8cb79c" opacity="0.85">GUIA PRÁTICO DE CULTIVO</text>
+</svg>

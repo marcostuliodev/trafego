@@ -1,26 +1,98 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ============================================================
+   DESIGN SYSTEM — Orquídeas
+   Estética: botânica, premium, editorial, natural.
+   Fonte do layout: next/font (Playfair Display + Inter).
+   ============================================================ */
+
+@theme {
+  /* Tipografia */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-playfair), "Georgia", "Times New Roman", serif;
+
+  /* Verde profundo / botânico */
+  --color-forest-950: #0a1d12;
+  --color-forest-900: #10281a;
+  --color-forest-800: #163523;
+  --color-forest-700: #1e442d;
+  --color-forest-600: #2a5739;
+  --color-forest-500: #3a6f4b;
+  --color-forest-400: #5c9270;
+  --color-forest-300: #8cb79c;
+  --color-forest-200: #bcd6c6;
+  --color-forest-100: #deebe3;
+  --color-forest-50: #f0f6f1;
+
+  /* Creme / off-white */
+  --color-cream-50: #fbfaf5;
+  --color-cream-100: #f6f1e5;
+  --color-cream-200: #ece3cd;
+  --color-cream-300: #ded0ae;
+
+  /* Dourado discreto */
+  --color-gold-800: #6f4f1c;
+  --color-gold-700: #8a6423;
+  --color-gold-600: #a67c2e;
+  --color-gold-500: #c39a4b;
+  --color-gold-400: #d4b376;
+  --color-gold-300: #e6cfa4;
+  --color-gold-200: #f0e2c6;
+  --color-gold-100: #f8f0df;
+
+  /* Tinta (texto) */
+  --color-ink-900: #162019;
+  --color-ink-700: #33403a;
+  --color-ink-500: #57645d;
+  --color-ink-400: #6f7b74;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ============================================================
+   BASE
+   ============================================================ */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-cream-50);
+  color: var(--color-ink-900);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+::selection {
+  background-color: var(--color-forest-700);
+  color: var(--color-cream-50);
+}
+
+/* Acessibilidade: foco visível consistente */
+:focus-visible {
+  outline: 3px solid var(--color-gold-500);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Reduz movimento para quem prefere */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
