@@ -9,7 +9,7 @@
  * - SITE_URL: URL pública do site (para SEO/canonical).
  */
 
-const DEFAULT_CHECKOUT_URL = "https://pay.hotmart.com/H10716600P";
+const DEFAULT_CHECKOUT_URL = "https://pay.hotmart.com/H107166000P";
 
 export const checkoutUrl: string =
   process.env.NEXT_PUBLIC_CHECKOUT_URL?.trim() || DEFAULT_CHECKOUT_URL;
