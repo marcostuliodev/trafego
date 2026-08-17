@@ -9,7 +9,7 @@
  * - SITE_URL: URL pública do site (para SEO/canonical).
  */
 
-const DEFAULT_CHECKOUT_URL = "#oferta";
+const DEFAULT_CHECKOUT_URL = "https://pay.hotmart.com/H10716600P";
 
 export const checkoutUrl: string =
   process.env.NEXT_PUBLIC_CHECKOUT_URL?.trim() || DEFAULT_CHECKOUT_URL;
@@ -17,7 +17,7 @@ export const checkoutUrl: string =
 export const price: string | null = process.env.NEXT_PUBLIC_PRICE?.trim() || null;
 
 export const siteUrl: string =
-  process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://orquideas.example.com";
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://ebook.especialorquideas.com.br";
 
 /** O link do checkout é uma âncora interna (fallback de desenvolvimento)? */
 export const isInternalCheckout = checkoutUrl.startsWith("#");
