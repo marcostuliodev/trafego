@@ -5,7 +5,7 @@ import { IconCheck } from "@/components/icons";
 /**
  * SEÇÃO 3 — A TRANSFORMAÇÃO (antes/depois)
  * Fundo verde escuro, painel "Depois" com destaque dourado.
- * Sem promessas de floração — a transformação é conhecimento → decisões.
+ * Decisão 7: copy sensorial visceral — folhas murchas → firmes, raízes secas → verdinhas.
  */
 export function Transformation() {
   return (
@@ -51,7 +51,7 @@ export function Transformation() {
                       <path d="M6 6l12 12M18 6L6 18" />
                     </svg>
                   </span>
-                  <span className="text-lg text-forest-100/70">{item}</span>
+                  <span className="text-[15px] leading-relaxed text-forest-100/70 sm:text-base">{item}</span>
                 </li>
               ))}
             </ul>
@@ -68,14 +68,14 @@ export function Transformation() {
                   <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gold-500/20 text-gold-400">
                     <IconCheck className="h-4 w-4" />
                   </span>
-                  <span className="text-lg text-cream-50">{item}</span>
+                  <span className="text-[15px] leading-relaxed text-cream-50 sm:text-base">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
         </div>
 
-        <p className="text-center font-serif text-xl italic text-gold-300 sm:text-2xl">
+        <p className="max-w-3xl text-center font-serif text-lg italic leading-relaxed text-gold-300 sm:text-xl">
           {transformation.note}
         </p>
       </div>

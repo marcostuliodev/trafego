@@ -2,10 +2,12 @@ import { finalCta } from "@/data/content";
 import { price } from "@/lib/config";
 import { CTAButton } from "@/components/cta-button";
 import { TrustBadges } from "@/components/TrustBadges";
+import { GuaranteeSeal } from "@/components/GuaranteeSeal";
 
 /**
  * SEÇÃO 13 — CTA FINAL
- * Visual limpo, headline forte, CTA dourado.
+ * Visual limpo, headline forte, CTA dourado + selo garantia.
+ * Decisão 8: selo ao lado do CTA.
  */
 export function FinalCTA() {
   return (
@@ -51,15 +53,18 @@ export function FinalCTA() {
           </span>
           <span className="text-xs text-forest-200/60">pagamento único • garantia 7 dias</span>
         </div>
-        <div className="mt-2 flex flex-col items-center gap-3">
-          <CTAButton
-            id="cta-final"
-            eventName="final_cta_click"
-            variant="gold"
-            size="lg"
-          >
-            {finalCta.cta}
-          </CTAButton>
+        <div className="mt-2 flex w-full flex-col items-center gap-6">
+          <div className="flex flex-col items-center justify-center gap-5 sm:flex-row sm:gap-6">
+            <CTAButton
+              id="cta-final"
+              eventName="final_cta_click"
+              variant="gold"
+              size="lg"
+            >
+              {finalCta.cta}
+            </CTAButton>
+            <GuaranteeSeal size="md" />
+          </div>
           <p className="text-xs text-forest-200/70 sm:text-sm">{finalCta.microtext}</p>
           <TrustBadges variant="dark" className="mt-2" />
         </div>

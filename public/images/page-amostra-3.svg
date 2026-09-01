@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 560" role="img" aria-label="Amostra página 3 — Pragas e fungos">
+  <rect width="400" height="560" rx="12" fill="#fbfaf5"/>
+  <rect x="12" y="12" width="376" height="536" rx="8" fill="none" stroke="#deebe3" stroke-width="1.2"/>
+  <rect x="24" y="24" width="352" height="42" rx="8" fill="#10281a"/>
+  <text x="30" y="42" font-family="Georgia, serif" font-size="10" letter-spacing="2" fill="#e6cfa4" font-weight="600">CAPÍTULOS 5–6</text>
+  <text x="30" y="54" font-family="Georgia, serif" font-size="11" fill="#fbfaf5" font-weight="600">INSETOS, PRAGAS E FUNGOS</text>
+  <!-- Checklist -->
+  <rect x="24" y="82" width="352" height="150" rx="8" fill="white" stroke="#deebe3" stroke-width="1"/>
+  <text x="36" y="102" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#163523">Checklist preventivo — 5 sinais de alerta</text>
+  <g font-family="Inter, sans-serif" font-size="8" fill="#33403a">
+    <text x="36" y="122">☐ Manchas pretas/marrons nas folhas — isole a planta</text>
+    <text x="36" y="138">☐ Teia fina + pontos claros — ácaros (ar seco)</text>
+    <text x="36" y="142" font-size="7" fill="#8cb79c">      ↑ aumente umidade e ventile</text>
+    <text x="36" y="160">☐ Algodão branco nas axilas — cochonilhas</text>
+    <text x="36" y="176">☐ Folhas meladas + formigas — pulgões</text>
+    <text x="36" y="192">☐ Cheiro de mofo + raízes escuras — fungo por excesso de água</text>
+  </g>
+  <rect x="36" y="200" width="180" height="16" rx="8" fill="#f0f6f1"/>
+  <text x="42" y="211" font-family="Inter, sans-serif" font-size="7" fill="#57645d">Ação rápida evita que espalhe para outras</text>
+  <!-- Prevention -->
+  <rect x="24" y="246" width="352" height="130" rx="8" fill="#f0f6f1" stroke="#deebe3" stroke-width="1"/>
+  <text x="36" y="266" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#163523">Prevenção que funciona</text>
+  <g font-family="Inter, sans-serif" font-size="8" fill="#57645d">
+    <text x="36" y="286">• Ventilação: ar parado = fungo. Use ventilador leve.</text>
+    <text x="36" y="302">• Rega pela manhã + substrato arejado = menos umidade noturna.</text>
+    <text x="36" y="318">• Ferramenta limpa: tesoura com álcool entre cortes.</text>
+    <text x="36" y="334">• Quarentena: nova orquídea 10–15 dias isolada.</text>
+    <text x="36" y="350">• Adubação equilibrada: planta forte resiste melhor.</text>
+  </g>
+  <!-- Note -->
+  <rect x="24" y="392" width="352" height="56" rx="8" fill="white" stroke="#deebe3" stroke-width="1"/>
+  <text x="36" y="412" font-family="Inter, sans-serif" font-size="7.5" fill="#6f7b74">Nota de responsabilidade: guia educacional.</text>
+  <text x="36" y="426" font-family="Inter, sans-serif" font-size="7.5" fill="#6f7b74">Não substitui diagnóstico fitossanitário profissional.</text>
+  <text x="36" y="440" font-family="Inter, sans-serif" font-size="7.5" fill="#8cb79c">Em infestação severa, procure viveiro/orquidário especializado.</text>
+  <rect x="24" y="462" width="352" height="36" rx="8" fill="#10281a"/>
+  <text x="200" y="476" text-anchor="middle" font-family="Inter, sans-serif" font-size="7.5" fill="#bcd6c6">PÁGINA AMOSTRA 3 — CAPS. 5–6 • Estrutura pronta para foto real/PDF</text>
+  <text x="200" y="488" text-anchor="middle" font-family="Inter, sans-serif" font-size="7" fill="#8cb79c">Troque este SVG por export real quando stakeholder enviar</text>
+  <text x="200" y="532" text-anchor="middle" font-family="Georgia, serif" font-size="8" letter-spacing="1" fill="#c39a4b">ORQUÍDEAS — PRINCÍPIOS BÁSICOS PARA CULTIVAR</text>
+</svg>

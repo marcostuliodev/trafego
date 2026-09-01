@@ -6,7 +6,8 @@ import { TrustBadges } from "@/components/TrustBadges";
 
 /**
  * SEÇÃO 2 — IDENTIFICAÇÃO COM O PROBLEMA
- * Perguntas que o visitante já se fez + texto de conexão + CTA.
+ * Perguntas que o visitante já se fez + texto de conexão + contador visceral + CTA.
+ * Decisão 7: tom visceral liberado + contador financeiro.
  */
 export function Problem() {
   return (
@@ -42,6 +43,22 @@ export function Problem() {
         <p className="max-w-2xl text-center text-base leading-relaxed text-ink-500 sm:text-lg">
           {problem.text}
         </p>
+
+        {/* Contador visceral — Decisão 7 */}
+        <div className="w-full max-w-3xl rounded-2xl border border-amber-200 bg-amber-50 px-6 py-5 text-center shadow-sm sm:px-8">
+          <p className="text-sm font-bold leading-relaxed text-amber-900 sm:text-base">
+            <span className="inline-flex items-center gap-2">
+              <span aria-hidden="true">💸</span>
+              {problem.costAlert.highlight}
+            </span>
+          </p>
+          <p className="mt-2 text-sm leading-relaxed text-amber-800 sm:text-[15px]">
+            {problem.costAlert.complement}
+          </p>
+          <p className="mt-1 text-xs text-amber-700/70">
+            * Valores médios de mercado (floriculatura/viveiros) — referência ilustrativa.
+          </p>
+        </div>
 
         <div className="flex flex-col items-center gap-3">
           <CTAButton

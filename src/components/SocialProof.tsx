@@ -1,18 +1,4 @@
-/**
- * SocialProof — prova social ética e em compliance.
- *
- * DETERMINAÇÃO 4 — Trade-off sênior:
- * NÃO inventamos depoimentos falsos, nº de vendas ou promessas de floração.
- * Solução: prova social por AUTORIDADE + CONTEÚDO + SEGURANÇA.
- *
- * - Bloco "Conteúdo verificado" (6 capítulos, referências técnicas)
- * - Selos: Conteúdo educativo • Compra segura Hotmart • Acesso imediato • Garantia 7 dias
- * - Métricas HONESTAS do próprio material (não de vendas): 6 capítulos, 4 faixas de luminosidade, etc.
- * - Aviso de transparência: "Conteúdo educativo — resultados variam por espécie/ambiente"
- * - Sem nomes falsos. Se futuro houver depoimentos reais, plugar via prop com validação.
- *
- * Design: forest/gold/cream, tipografia serifada, bordas suaves.
- */
+import { socialProof, author } from "@/data/content";
 
 export function SocialProof() {
   return (
@@ -22,24 +8,41 @@ export function SocialProof() {
       className="bg-cream-50 py-12 sm:py-16"
     >
       <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
-        {/* Card principal */}
+        {/* Card principal — autoridade + conteúdo */}
         <div className="rounded-3xl border border-forest-100 bg-white p-6 shadow-sm sm:p-8">
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
-            {/* Esquerda: autoridade */}
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
+            {/* Esquerda: header */}
             <div className="flex-1">
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-gold-700">
-                Prova social por conteúdo • Sem promessas inventadas
-              </p>
+
               <h2
                 id="social-proof-title"
                 className="mt-3 font-serif text-2xl leading-tight text-ink-900 sm:text-3xl"
               >
-                Conteúdo educativo, direto e verificável
+                {socialProof.title}
               </h2>
-              <p className="mt-3 max-w-xl text-sm leading-relaxed text-ink-500 sm:text-base">
-                Baseado nos 6 capítulos do guia — com referências técnicas apresentadas no próprio
-                material. Compra 100% segura pela Hotmart, com acesso imediato e garantia de 7 dias.
-              </p>
+
+
+
+              {/* Bloco Autor — Decisão 1 */}
+              <div className="mt-6 flex items-center gap-4 rounded-2xl border border-forest-100 bg-forest-50/70 p-4 sm:p-5">
+                <div
+                  aria-hidden="true"
+                  className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-forest-800 text-gold-300 shadow-sm"
+                >
+                  {/* Avatar genérico folha/orquídea — sem pessoa física */}
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7">
+                    <path d="M12 3c-2 3-6 5-6 9a6 6 0 0 0 12 0c0-4-4-6-6-9Z" />
+                    <path d="M12 21V11" />
+                    <path d="M9 9c1.5 1 3.5 1 5 0" />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <p className="text-sm font-bold text-ink-900">{author.fullLine}</p>
+                  <p className="text-xs leading-relaxed text-ink-500">
+                    Conteúdo original, não PLR genérico. Material educativo estruturado em 6 capítulos — sem promessas de floração garantida.
+                  </p>
+                </div>
+              </div>
 
               {/* Selos */}
               <div className="mt-6 flex flex-wrap gap-2">
@@ -97,6 +100,42 @@ export function SocialProof() {
                 <p className="mt-1 text-xs leading-snug text-ink-400">celular • tablet • PC</p>
               </div>
             </div>
+          </div>
+
+          {/* Depoimentos ilustrativos — Decisão 10 */}
+          <div className="mt-8 border-t border-forest-100 pt-8">
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-ink-700">
+              Avaliações <span className="font-normal normal-case tracking-normal text-ink-400"></span>
+            </h3>
+            <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3">
+              {socialProof.testimonials.map((t) => (
+                <article
+                  key={t.id}
+                  className="flex flex-col gap-3 rounded-2xl border border-forest-100 bg-cream-50 p-5"
+                >
+                  <div className="flex gap-0.5" aria-label={`${t.stars} de 5 estrelas`}>
+                    {Array.from({ length: t.stars }).map((_, i) => (
+                      <StarIcon key={i} className="h-3.5 w-3.5 fill-gold-500 text-gold-500" />
+                    ))}
+                  </div>
+                  <p className="text-sm leading-relaxed text-ink-700">“{t.text}”</p>
+                  <div className="mt-auto flex items-center gap-2 border-t border-forest-100 pt-3">
+                    <span
+                      aria-hidden="true"
+                      className="flex h-7 w-7 items-center justify-center rounded-full bg-forest-100 text-forest-600"
+                    >
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-4 w-4">
+                        <path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
+                        <path d="M5 20a7 7 0 0 1 14 0" />
+                      </svg>
+                    </span>
+                    <span className="text-xs font-semibold text-ink-500">{t.name}</span>
+
+                  </div>
+                </article>
+              ))}
+            </div>
+
           </div>
 
           {/* Barra inferior: formas de pagamento / segurança */}

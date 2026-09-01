@@ -16,6 +16,11 @@ const DEFAULT_CHECKOUT_URL = "https://pay.hotmart.com/H107166000P";
 /** Preço padrão — fixo R$ 9,90 conforme determinação stakeholder. */
 const DEFAULT_PRICE = "R$ 9,90";
 
+/** Preço âncora para ancoragem De R$47 → R$9,90 (frio). Default R$47 se stakeholder não informar. */
+const DEFAULT_ANCHOR_PRICE = "R$ 47,00";
+export const anchorPrice: string =
+  process.env.NEXT_PUBLIC_ANCHOR_PRICE?.trim() || DEFAULT_ANCHOR_PRICE;
+
 export const checkoutUrl: string =
   process.env.NEXT_PUBLIC_CHECKOUT_URL?.trim() || DEFAULT_CHECKOUT_URL;
 
@@ -28,6 +33,10 @@ export const bundlePrice: string =
 
 export const siteUrl: string =
   process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://ebook.especialorquideas.com.br";
+
+/** Microsoft Clarity ID — script condicional via NEXT_PUBLIC_CLARITY_ID */
+export const clarityId: string =
+  process.env.NEXT_PUBLIC_CLARITY_ID?.trim() || "";
 
 /** O link do checkout é uma âncora interna (fallback de desenvolvimento)? */
 export const isInternalCheckout = checkoutUrl.startsWith("#");
