@@ -98,27 +98,14 @@ h4,
 }
 
 /* ============================================================
-   STICKY CTA — visibilidade controlada por script inline
-   (src/app/layout.tsx). Oculta por padrão; .is-visible exibe.
-   Mobile: translateY(100%) -> 0. Desktop: translateY(120%) + opacity.
-   Respeita prefers-reduced-motion via regra global acima.
+   STICKY CTA — fixo e visível desde o carregamento.
    ============================================================ */
 .sticky-cta {
-  transform: translateY(100%);
-  opacity: 0.98;
-}
-
-.sticky-cta.is-visible {
   transform: translateY(0);
+  opacity: 1;
 }
 
 .sticky-cta-desktop {
-  transform: translateY(16px) scale(0.98);
-  opacity: 0;
-  pointer-events: none;
-}
-
-.sticky-cta-desktop.is-visible {
   transform: translateY(0) scale(1);
   opacity: 1;
   pointer-events: auto;

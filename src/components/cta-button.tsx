@@ -22,10 +22,10 @@ const sizeClasses: Record<NonNullable<CTAButtonProps["size"]>, string> = {
 
 const variantClasses: Record<NonNullable<CTAButtonProps["variant"]>, string> = {
   primary:
-    "bg-forest-800 text-cream-50 shadow-lg shadow-forest-900/25 hover:bg-forest-700 hover:shadow-xl hover:shadow-forest-900/30 active:translate-y-px",
+    "bg-gold-500 text-cream-500 shadow-lg shadow-forest-900/25 hover:bg-gold-400 hover:shadow-xl hover:shadow-forest-900/30 active:translate-y-px",
   gold: "bg-gold-500 text-forest-950 shadow-lg shadow-gold-700/25 hover:bg-gold-400 active:translate-y-px",
   outline:
-    "border-2 border-forest-800 text-forest-800 hover:bg-forest-800 hover:text-cream-50 active:translate-y-px",
+    "border-2 border-forest-800 text-forest-800 hover:bg-amber-400 hover:text-cream-50 active:translate-y-px",
 };
 
 /**

@@ -39,9 +39,9 @@ export default function Home() {
         <Offer />
         <FAQ />
         <FinalCTA />
+      <StickyCTA />
       </main>
       <Footer />
-      <StickyCTA />
     </>
   );
 }

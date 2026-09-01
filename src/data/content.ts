@@ -17,8 +17,8 @@ export const site = {
 /** Autor institucional — Decisão 1: "Especial Orquídeas" (não pessoa física) */
 export const author = {
   name: "Equipe Especial Orquídeas",
-  subtitle: "8 anos cultivando orquídeas",
-  fullLine: "Equipe Especial Orquídeas — 8 anos cultivando",
+  subtitle: "+10 anos cultivando orquídeas",
+  fullLine: "Equipe Especial Orquídeas — +10 anos cultivando",
   avatarAlt: "Avatar ilustrado — folha/orquídea (equipe, não pessoa física)",
 };
 
@@ -428,19 +428,19 @@ export const socialProof = {
     {
       id: "t1",
       name: "Marina Alves • SP",
-      text: "Eu perdia quase 1 orquídea por mês por rega errada e achava que era falta d'água — era sol demais queimando as folhas. O capítulo de luminosidade + checklist de rega me fez parar de adivinhar: agora olho substrato, luz e ventilação e decido com segurança.",
+      text: "Eu perdia quase uma orquídea por mês por causa da rega e achava que era falta d'água. Depois percebi que o sol estava queimando as folhas. A parte sobre luminosidade e rega me ajudou a observar melhor o substrato, a luz e a ventilação antes de molhar.",
       stars: 5,
     },
     {
       id: "t2",
       name: "Lucas Melo • MG",
-      text: "Meu substrato vivia encharcado com cheiro de mofo e eu regava no automático sem saber se era demais ou de menos. A tabela de sombreamento 50%–70% e a parte de substrato/vaso abriram meus olhos — entendi quando olhar a raiz e ajustar a rega. Direto ao ponto.",
+      text: "Eu molhava a planta toda vez que lembrava e depois não entendia por que o substrato ficava com cheiro de mofo. O guia me fez olhar primeiro para as raízes e para o lugar onde a orquídea fica. Ainda estou aprendendo, mas agora não rego mais no automático.",
       stars: 5,
     },
     {
       id: "t3",
       name: "Juliana Costa • RJ",
-      text: "Achava que adubar mais ia salvar minha orquídea e só piorava. A parte de adubação, pragas e fungos me deu o checklist que eu precisava para prevenir: aprendi a reconhecer sinais antes de espalhar e parei de cuidar no achismo. Prático, sem enrolação.",
+      text: "Eu tinha a impressão de que, se a orquídea não estava bem, era só colocar mais adubo. Acabei percebendo que estava mais atrapalhando do que ajudando. A parte sobre adubação, pragas e fungos me ajudou a entender os sinais e a ter mais calma antes de tentar qualquer coisa.",
       stars: 5,
     },
   ] as const,

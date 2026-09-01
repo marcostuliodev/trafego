@@ -17,7 +17,6 @@ export function Mockup() {
     >
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-10 px-5 sm:px-8">
         <SectionHeading
-          eyebrow={mockup.eyebrow}
           title={mockup.title}
           align="center"
           id="mockup-title"

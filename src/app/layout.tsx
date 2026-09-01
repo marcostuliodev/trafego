@@ -66,7 +66,7 @@ export const metadata: Metadata = {
  * Scripts inline (vanilla, sem React) que substituem a hidratação client:
  * - Analytics: delegação de eventos em [data-analytics-event] (CTAs) → dataLayer + fbq.
  * - FAQ: escuta `toggle` dos <details> e dispara faq_open.
- * - Sticky CTA: alterna visibilidade conforme o scroll (mobile).
+ * - Sticky CTA: renderizado e fixo desde o carregamento.
  * - ViewContent: IntersectionObserver na #oferta → dataLayer + fbq ViewContent (frio).
  * - Hero variant coin-flip 50/50 quando NEXT_PUBLIC_HERO_VARIANT não definido.
  * - (Removido) Lead/amostra grátis — não há mais evento lead/sample_cta_click.
@@ -103,28 +103,6 @@ const inlineScripts = `
         }
       });
     }
-  }
-
-  function initSticky() {
-    var bar = document.getElementById('sticky-cta');
-    var desk = document.getElementById('sticky-cta-desktop');
-    function toggle(el, visible) {
-      if (!el) return;
-      el.classList.toggle('is-visible', visible);
-      el.setAttribute('aria-hidden', visible ? 'false' : 'true');
-      if (visible) {
-        el.removeAttribute('inert');
-      } else {
-        el.setAttribute('inert', '');
-      }
-    }
-    function onScroll() {
-      var visible = window.scrollY > window.innerHeight * 0.8;
-      toggle(bar, visible);
-      toggle(desk, visible);
-    }
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
   }
 
   function initViewContent() {
@@ -171,7 +149,6 @@ const inlineScripts = `
 
   function init() {
     initFaq();
-    initSticky();
     initViewContent();
     initHeroVariant();
   }

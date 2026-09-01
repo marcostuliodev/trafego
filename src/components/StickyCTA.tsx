@@ -6,9 +6,7 @@ import { price } from "@/lib/config";
  *
  * Mobile: barra inferior fixa (md:hidden) com preço e CTA unificado.
  * Desktop: pill flutuante discreta (hidden md:flex) bottom-right.
- * Ambos controlados pelo mesmo script inline vanilla (src/app/layout.tsx) —
- * sem hidratação, performático. Trigger 0.8 * viewport, com animação
- * translateY + opacity e respeito a prefers-reduced-motion.
+ * Fica visível desde o carregamento, sem depender de hidratação ou scroll.
  *
  * Trade-off: desktop não invade com barra full-width; pill é menos agressivo,
  * mantém Offer/FinalCTA como CTAs principais, mas garante recall constante.
@@ -19,8 +17,6 @@ export function StickyCTA() {
       {/* Mobile bar */}
       <div
         id="sticky-cta"
-        inert
-        aria-hidden="true"
         className="sticky-cta fixed inset-x-0 bottom-0 z-50 border-t border-gold-500/30 bg-forest-950/95 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur transition-all duration-300 ease-out md:hidden"
       >
         <div className="flex items-center gap-3">
@@ -46,8 +42,6 @@ export function StickyCTA() {
       {/* Desktop floating pill */}
       <div
         id="sticky-cta-desktop"
-        inert
-        aria-hidden="true"
         className="sticky-cta-desktop fixed bottom-6 right-6 z-50 hidden items-center gap-3 rounded-full border border-gold-500/20 bg-forest-950/95 px-2 py-2 shadow-2xl shadow-black/30 backdrop-blur transition-all duration-300 ease-out md:flex"
       >
         <div className="pl-4 pr-1 text-left leading-none">

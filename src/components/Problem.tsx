@@ -45,17 +45,17 @@ export function Problem() {
         </p>
 
         {/* Contador visceral — Decisão 7 */}
-        <div className="w-full max-w-3xl rounded-2xl border border-amber-200 bg-amber-50 px-6 py-5 text-center shadow-sm sm:px-8">
-          <p className="text-sm font-bold leading-relaxed text-amber-900 sm:text-base">
+        <div className="w-full max-w-3xl rounded-2xl border border-amber-200 bg-forest-800 px-6 py-5 text-center shadow-sm sm:px-8">
+          <p className="text-sm font-bold leading-relaxed text-amber-50 sm:text-base">
             <span className="inline-flex items-center gap-2">
               <span aria-hidden="true">💸</span>
               {problem.costAlert.highlight}
             </span>
           </p>
-          <p className="mt-2 text-sm leading-relaxed text-amber-800 sm:text-[15px]">
+          <p className="mt-2 text-sm leading-relaxed text-amber-50 sm:text-[15px]">
             {problem.costAlert.complement}
           </p>
-          <p className="mt-1 text-xs text-amber-700/70">
+          <p className="mt-1 text-xs text-amber-50/70">
             * Valores médios de mercado (floriculatura/viveiros) — referência ilustrativa.
           </p>
         </div>

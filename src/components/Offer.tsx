@@ -28,7 +28,6 @@ export function Offer() {
       />
       <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center gap-12 px-5 sm:px-8">
         <SectionHeading
-          eyebrow={offer.eyebrow}
           title={offer.title}
           align="center"
           id="offer-title"
