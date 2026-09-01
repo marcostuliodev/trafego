@@ -288,7 +288,7 @@ export const offer = {
       "BÔNUS: Planner de cuidados semanal",
     ],
     cta: "QUERO O KIT COMPLETO POR R$ 19,90",
-    note: "Order bump no Hotmart — adicione no checkout em 1 clique",
+    note: "pagamento único • acesso imediato",
   },
 };
 

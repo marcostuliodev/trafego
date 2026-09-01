@@ -1,5 +1,5 @@
 import { offer } from "@/data/content";
-import { price, bundlePrice, enableBundle } from "@/lib/config";
+import { price, enableBundle } from "@/lib/config";
 import { SectionHeading } from "@/components/section-heading";
 import { CTAButton } from "@/components/cta-button";
 import { IconCheck } from "@/components/icons";
@@ -9,15 +9,7 @@ import { TrustBadges } from "@/components/TrustBadges";
  * SEÇÃO 11 — OFERTA
  * Determinações atendidas:
  * - 1 & 2: Preço R$9,90 fixo sempre visível, com microcopy "por apenas" próximo ao CTA.
- * - 3: Trade-off upsell — ver comentário abaixo.
  * - 6: Selos de confiança próximos a TODOS CTAs.
- *
- * Trade-off 3 — Upsell/Cross-sell (decisão sênior):
- * Ticket R$9,90 é impulso — bundle no site aumenta fricção e pode reduzir conversão.
- * Melhor: oferta única enxuta no site + order bump Hotmart (1 clique) para Kit R$19,90.
- * Implementação: enableBundle=false por padrão (max conversão).
- * Quando NEXT_PUBLIC_ENABLE_BUNDLE=true, exibe grade dual (Solo R$9,90 vs Kit R$19,90).
- * Mesmo com bundle desligado, mostra teaser discreto "Leve também no checkout" para educar sem distrair.
  */
 export function Offer() {
   return (
@@ -108,7 +100,6 @@ export function Offer() {
                 <CTAButton id="cta-offer-bundle" eventName="offer_bundle_cta_click" variant="primary" size="lg" className="w-full bg-cream-50 text-forest-900 hover:bg-white">
                   {offer.bundle.cta}
                 </CTAButton>
-                <p className="text-center text-xs text-forest-200/60">Você também pode adicionar o Kit no checkout com 1 clique</p>
               </div>
             </div>
           </div>
@@ -167,16 +158,6 @@ export function Offer() {
                 </CTAButton>
                 <p className="text-xs text-forest-200/70 sm:text-sm">{offer.microtext}</p>
                 <TrustBadges variant="dark" className="mt-1" />
-                {/* Teaser upsell Hotmart — não compete, educa */}
-                <div className="mt-4 w-full rounded-2xl border border-gold-500/20 bg-forest-900/50 px-4 py-3 text-center">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-gold-300">
-                    💡 No checkout você pode adicionar
-                  </p>
-                  <p className="mt-1 text-sm text-cream-50">
-                    Kit Checklist + Planner por <span className="font-bold text-gold-400">{bundlePrice}</span> — 1 clique no Hotmart
-                  </p>
-                  <p className="mt-1 text-xs text-forest-300/70">Order bump • sem preencher dados novamente</p>
-                </div>
               </div>
             </div>
           </div>
