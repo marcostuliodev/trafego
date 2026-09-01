@@ -1,6 +1,7 @@
 import { benefits } from "@/data/content";
 import { SectionHeading } from "@/components/section-heading";
 import { CTAButton } from "@/components/cta-button";
+import { TrustBadges } from "@/components/TrustBadges";
 import {
   IconDrop,
   IconLeaf,
@@ -58,14 +59,18 @@ export function Benefits() {
         </ul>
 
         {/* CTA pós-conteúdo — captura o visitante já convencido pelo valor */}
-        <CTAButton
-          id="cta-benefits"
-          eventName="content_cta_click"
-          variant="primary"
-          size="lg"
-        >
-          {benefits.ctaLabel}
-        </CTAButton>
+        <div className="flex flex-col items-center gap-3">
+          <CTAButton
+            id="cta-benefits"
+            eventName="content_cta_click"
+            variant="primary"
+            size="lg"
+          >
+            {benefits.ctaLabel}
+          </CTAButton>
+          <p className="text-xs text-ink-400 sm:text-sm">por apenas R$ 9,90 • acesso imediato</p>
+          <TrustBadges variant="light" compact className="mt-1" />
+        </div>
       </div>
     </section>
   );

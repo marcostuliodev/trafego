@@ -1,6 +1,7 @@
-import Image from "next/image";
 import { finalCta } from "@/data/content";
+import { price } from "@/lib/config";
 import { CTAButton } from "@/components/cta-button";
+import { TrustBadges } from "@/components/TrustBadges";
 
 /**
  * SEÇÃO 13 — CTA FINAL
@@ -18,11 +19,13 @@ export function FinalCTA() {
         aria-hidden="true"
         className="pointer-events-none absolute -left-24 bottom-0 opacity-[0.12]"
       >
-        <Image
+        <img
           src="/images/orchid-flower.svg"
           alt=""
           width={480}
           height={480}
+          loading="lazy"
+          decoding="async"
         />
       </div>
       <div
@@ -40,6 +43,14 @@ export function FinalCTA() {
         <p className="max-w-xl text-base leading-relaxed text-forest-100/85 sm:text-lg">
           {finalCta.subheadline}
         </p>
+        {/* Preço próximo ao CTA — determinação 2 */}
+        <div className="flex flex-col items-center gap-1">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-400">por apenas</span>
+          <span className="font-serif text-4xl font-bold text-gold-400 sm:text-5xl" aria-label={`Preço ${price}`}>
+            {price}
+          </span>
+          <span className="text-xs text-forest-200/60">pagamento único • garantia 7 dias</span>
+        </div>
         <div className="mt-2 flex flex-col items-center gap-3">
           <CTAButton
             id="cta-final"
@@ -49,9 +60,8 @@ export function FinalCTA() {
           >
             {finalCta.cta}
           </CTAButton>
-          <p className="text-xs text-forest-200/70 sm:text-sm">
-            {finalCta.microtext}
-          </p>
+          <p className="text-xs text-forest-200/70 sm:text-sm">{finalCta.microtext}</p>
+          <TrustBadges variant="dark" className="mt-2" />
         </div>
       </div>
     </section>

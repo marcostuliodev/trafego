@@ -1,6 +1,7 @@
-import Image from "next/image";
 import { hero } from "@/data/content";
+import { price } from "@/lib/config";
 import { CTAButton } from "@/components/cta-button";
+import { TrustBadges } from "@/components/TrustBadges";
 
 /**
  * SEÇÃO 1 — HERO (primeira dobra)
@@ -24,12 +25,13 @@ export function Hero() {
         aria-hidden="true"
         className="pointer-events-none absolute -right-24 top-1/2 hidden -translate-y-1/2 opacity-[0.14] lg:block"
       >
-        <Image
+        <img
           src="/images/orchid-flower.svg"
           alt=""
           width={560}
           height={560}
-          priority={false}
+          loading="lazy"
+          decoding="async"
         />
       </div>
 
@@ -51,7 +53,19 @@ export function Hero() {
             {hero.subheadline}
           </p>
 
-          <div className="mt-2 flex flex-col items-start gap-3">
+          {/* Preço acima da dobra — determinação 2 */}
+          <div className="flex flex-col items-start gap-2">
+            <div className="inline-flex items-center gap-2 rounded-full border border-gold-500/30 bg-gold-500/10 px-4 py-2">
+              <span className="text-xs font-semibold uppercase tracking-wide text-gold-300">por apenas</span>
+              <span className="font-serif text-xl font-bold text-gold-300" aria-label={`Preço ${price}`}>
+                {price}
+              </span>
+              <span className="hidden text-xs text-forest-200/60 sm:inline">• acesso imediato</span>
+            </div>
+            <p className="text-xs text-forest-200/60 sm:text-sm">Pagamento único • Garantia 7 dias</p>
+          </div>
+
+          <div className="mt-1 flex flex-col items-start gap-3">
             <CTAButton
               id="cta-hero"
               eventName="hero_cta_click"
@@ -63,6 +77,7 @@ export function Hero() {
             <p className="text-xs text-forest-200/70 sm:text-sm">
               {hero.microtext}
             </p>
+            <TrustBadges variant="dark" className="mt-1" compact />
           </div>
         </div>
 
@@ -73,12 +88,14 @@ export function Hero() {
             className="absolute h-72 w-72 rounded-full bg-gold-500/10 blur-3xl"
           />
           <div className="relative w-56 rotate-2 rounded-lg shadow-2xl shadow-black/50 transition-transform duration-300 hover:rotate-0 sm:w-64 lg:w-72">
-            <Image
+            <img
               src="/images/ebook-cover.svg"
               alt="Capa do e-book Orquídeas — Princípios básicos para cultivar"
               width={400}
               height={600}
-              priority
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
               className="h-auto w-full rounded-lg"
             />
             {/* Brilho sutil na capa */}

@@ -96,3 +96,38 @@ h4,
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ============================================================
+   STICKY CTA — visibilidade controlada por script inline
+   (src/app/layout.tsx). Oculta por padrão; .is-visible exibe.
+   Mobile: translateY(100%) -> 0. Desktop: translateY(120%) + opacity.
+   Respeita prefers-reduced-motion via regra global acima.
+   ============================================================ */
+.sticky-cta {
+  transform: translateY(100%);
+  opacity: 0.98;
+}
+
+.sticky-cta.is-visible {
+  transform: translateY(0);
+}
+
+.sticky-cta-desktop {
+  transform: translateY(16px) scale(0.98);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sticky-cta-desktop.is-visible {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ============================================================
+   FAQ — <details>/<summary> nativos (zero JavaScript)
+   Remove o marcador padrão do navegador (reforço além do list-none).
+   ============================================================ */
+summary::-webkit-details-marker {
+  display: none;
+}

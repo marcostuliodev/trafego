@@ -2,6 +2,7 @@ import { problem } from "@/data/content";
 import { SectionHeading } from "@/components/section-heading";
 import { CTAButton } from "@/components/cta-button";
 import { IconLeaf } from "@/components/icons";
+import { TrustBadges } from "@/components/TrustBadges";
 
 /**
  * SEÇÃO 2 — IDENTIFICAÇÃO COM O PROBLEMA
@@ -42,14 +43,18 @@ export function Problem() {
           {problem.text}
         </p>
 
-        <CTAButton
-          id="cta-content"
-          eventName="content_cta_click"
-          variant="primary"
-          size="lg"
-        >
-          {problem.cta.label}
-        </CTAButton>
+        <div className="flex flex-col items-center gap-3">
+          <CTAButton
+            id="cta-content"
+            eventName="content_cta_click"
+            variant="primary"
+            size="lg"
+          >
+            {problem.cta.label}
+          </CTAButton>
+          <p className="text-xs text-ink-400 sm:text-sm">por apenas R$ 9,90 • acesso imediato via Hotmart</p>
+          <TrustBadges variant="light" compact />
+        </div>
       </div>
     </section>
   );

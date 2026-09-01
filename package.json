@@ -2,9 +2,9 @@
   "name": "trafego",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
+"scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && node scripts/strip-runtime.mjs",
     "start": "next start",
     "lint": "eslint"
   },

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { mockup } from "@/data/content";
 import { SectionHeading } from "@/components/section-heading";
 
@@ -28,11 +27,13 @@ export function Mockup() {
           <div className="hidden w-72 flex-col sm:flex lg:w-96">
             <div className="rounded-t-xl border border-ink-900/80 bg-ink-900 p-2 shadow-2xl shadow-forest-900/30">
               <div className="overflow-hidden rounded-lg bg-white">
-                <Image
+                <img
                   src="/images/ebook-cover.svg"
                   alt="Capa do e-book exibida na tela de um notebook"
                   width={400}
                   height={600}
+                  loading="lazy"
+                  decoding="async"
                   className="h-auto w-full object-cover"
                 />
               </div>
@@ -45,11 +46,13 @@ export function Mockup() {
           <div className="w-40 sm:w-48 lg:w-56">
             <div className="rounded-2xl border border-ink-900/80 bg-ink-900 p-2.5 shadow-2xl shadow-forest-900/30">
               <div className="overflow-hidden rounded-lg bg-white">
-                <Image
+                <img
                   src="/images/ebook-cover.svg"
                   alt="Capa do e-book exibida na tela de um tablet"
                   width={400}
                   height={600}
+                  loading="lazy"
+                  decoding="async"
                   className="h-auto w-full object-cover"
                 />
               </div>
@@ -65,11 +68,13 @@ export function Mockup() {
                   aria-hidden="true"
                   className="absolute left-1/2 top-1.5 z-10 h-1.5 w-12 -translate-x-1/2 rounded-full bg-ink-900"
                 />
-                <Image
+                <img
                   src="/images/ebook-cover.svg"
                   alt="Capa do e-book exibida na tela de um celular"
                   width={400}
                   height={600}
+                  loading="lazy"
+                  decoding="async"
                   className="h-auto w-full object-cover"
                 />
               </div>

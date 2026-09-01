@@ -4,6 +4,7 @@ import { Transformation } from "@/components/Transformation";
 import { Contents } from "@/components/Contents";
 import { TableOfContents } from "@/components/TableOfContents";
 import { Benefits } from "@/components/Benefits";
+import { SocialProof } from "@/components/SocialProof";
 import { Highlights } from "@/components/Highlights";
 import { Mockup } from "@/components/Mockup";
 import { Audience } from "@/components/Audience";
@@ -27,6 +28,7 @@ export default function Home() {
         <Contents />
         <TableOfContents />
         <Benefits />
+        <SocialProof />
         <Highlights />
         <Mockup />
         <Audience />

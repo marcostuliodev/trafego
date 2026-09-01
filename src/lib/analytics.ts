@@ -21,8 +21,10 @@ export type AnalyticsEvent =
   | "hero_cta_click"
   | "content_cta_click"
   | "offer_cta_click"
+  | "offer_bundle_cta_click"
   | "final_cta_click"
   | "sticky_cta_click"
+  | "sticky_desktop_cta_click"
   | "faq_open"
   | "checkout_start"
   | "purchase";

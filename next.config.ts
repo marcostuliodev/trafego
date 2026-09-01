@@ -20,10 +20,9 @@ if (process.env.NODE_ENV === "production") {
     );
   }
   if (!process.env.NEXT_PUBLIC_PRICE?.trim()) {
-    console.warn(
-      "\n⚠️  [CONFIG] NEXT_PUBLIC_PRICE não definida! " +
-        "A seção de oferta será exibida sem preço.\n" +
-        "Defina o preço real do e-book (veja .env.local.example).\n",
+    console.info(
+      "\nℹ️  [CONFIG] NEXT_PUBLIC_PRICE não definida — usando fallback fixo R$ 9,90 (src/lib/config.ts).\n" +
+        "Para sobrescrever, defina NEXT_PUBLIC_PRICE no ambiente.\n",
     );
   }
 }
@@ -36,6 +35,11 @@ const nextConfig: NextConfig = {
     // Landing page 100% estática: imagens servidas como estão em /public.
     // Para fotos de produção, comprimir antes de adicionar (WebP/AVIF).
     unoptimized: true,
+  },
+  experimental: {
+    // Inline do CSS no <head>: elimina o request render-blocking do stylesheet,
+    // melhorando FCP/LCP em visitas novas (landing page — público majoritariamente novo).
+    inlineCss: true,
   },
 };
 

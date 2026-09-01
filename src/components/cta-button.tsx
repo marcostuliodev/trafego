@@ -1,13 +1,10 @@
-"use client";
-
 import type { ReactNode } from "react";
-import { trackEvent, type AnalyticsEvent } from "@/lib/analytics";
 import { checkoutUrl, isInternalCheckout } from "@/lib/config";
 
 type CTAButtonProps = {
   children: ReactNode;
   /** Evento de analytics disparado no clique (ex.: hero_cta_click). */
-  eventName: AnalyticsEvent;
+  eventName: string;
   /** ID consistente para tracking (ex.: cta-hero, cta-offer). */
   id: string;
   variant?: "primary" | "gold" | "outline";
@@ -34,7 +31,9 @@ const variantClasses: Record<NonNullable<CTAButtonProps["variant"]>, string> = {
 /**
  * Botão de CTA único para toda a página.
  * - Usa a URL de checkout centralizada em src/lib/config.ts (CHECKOUT_URL).
- * - Dispara eventos de analytics consistentes (data-analytics-event + dataLayer).
+ * - Componente de servidor (zero JavaScript): o tracking de analytics é feito
+ *   por um script inline de delegação de eventos (ver src/app/layout.tsx),
+ *   que escuta cliques em `[data-analytics-event]` e empurra para o dataLayer.
  */
 export function CTAButton({
   children,
@@ -44,18 +43,11 @@ export function CTAButton({
   size = "lg",
   className = "",
 }: CTAButtonProps) {
-  const isAnchor = isInternalCheckout;
-
-  const handleClick = () => {
-    trackEvent(eventName, { cta_id: id });
-    trackEvent("checkout_start", { cta_id: id });
-  };
-
   const classes = `${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${className}`;
 
-  if (isAnchor) {
+  if (isInternalCheckout) {
     return (
-      <a id={id} href={checkoutUrl} data-analytics-event={eventName} onClick={handleClick} className={classes}>
+      <a id={id} href={checkoutUrl} data-analytics-event={eventName} className={classes}>
         {children}
       </a>
     );
@@ -68,7 +60,6 @@ export function CTAButton({
       target="_blank"
       rel="noopener noreferrer"
       data-analytics-event={eventName}
-      onClick={handleClick}
       className={classes}
     >
       {children}

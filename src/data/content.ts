@@ -14,14 +14,25 @@ export const site = {
   chaptersCount: 6,
 };
 
+/**
+ * CTA unificado — decisão Trade-off 7:
+ * Antes: Hero/Problem/Benefits/Final = "QUERO APRENDER..." vs Offer/Sticky = "QUERO MEU E-BOOK"
+ * Depois: todos = "QUERO MEU E-BOOK POR R$ 9,90"
+ * Trade-off: perde apelo emocional puro mas ganha transparência de preço (reduz abandono no checkout),
+ * aumenta CTR qualificado e reforça ticket impulso. Microcopy emocional mantida nos headlines/subheadlines.
+ * eventName permanece distinto para analytics.
+ */
+export const unifiedCta = "QUERO MEU E-BOOK POR R$ 9,90";
+
 /* ------------------------- SEÇÃO 1 — HERO ------------------------- */
 export const hero = {
   eyebrow: "Guia prático de cultivo de orquídeas",
   headline: "Aprenda a cuidar melhor das suas orquídeas — do ambiente à floração.",
   subheadline:
     "Um guia prático para entender luminosidade, rega, adubação, substrato, pragas e fungos e proporcionar às suas plantas condições mais adequadas para crescerem saudáveis.",
-  cta: "QUERO APRENDER A CUIDAR DAS MINHAS ORQUÍDEAS",
-  microtext: site.formatLine,
+  cta: unifiedCta,
+  microtext: "Acesso imediato por R$ 9,90 • Pagamento 100% seguro via Hotmart",
+  priceBadge: "por apenas R$ 9,90",
 };
 
 /* ----------------- SEÇÃO 2 — IDENTIFICAÇÃO COM O PROBLEMA ----------------- */
@@ -38,7 +49,7 @@ export const problem = {
   ],
   text: "Cuidar de orquídeas pode parecer simples até surgirem as primeiras dúvidas. E muitas vezes o problema não está em um único cuidado, mas no conjunto de condições em que a planta está sendo cultivada.",
   cta: {
-    label: "QUERO APRENDER A CUIDAR DAS MINHAS ORQUÍDEAS",
+    label: unifiedCta,
     eventName: "content_cta_click",
   } as const,
 };
@@ -161,7 +172,7 @@ export const tableOfContents = {
 export const benefits = {
   eyebrow: "Você vai aprender",
   title: "Mais do que informações: conhecimento para tomar melhores decisões no cultivo.",
-  ctaLabel: "QUERO APRENDER A CUIDAR DAS MINHAS ORQUÍDEAS",
+  ctaLabel: unifiedCta,
   items: [
     {
       id: "ambiente",
@@ -264,8 +275,21 @@ export const offer = {
     "Conteúdo sobre pragas e fungos",
     "Material para consulta durante o cultivo",
   ],
-  cta: "QUERO MEU E-BOOK",
-  microtext: site.formatLine,
+  cta: unifiedCta,
+  microtext: "Acesso imediato por R$ 9,90 • Pagamento 100% seguro via Hotmart",
+  priceNote: "por apenas R$ 9,90 — acesso imediato",
+  bundle: {
+    title: "Kit Cultivo Completo",
+    price: "R$ 19,90",
+    badge: "MAIS ESCOLHIDO NO CHECKOUT",
+    items: [
+      "E-book completo (6 capítulos)",
+      "BÔNUS: Checklist de rega e luminosidade (PDF)",
+      "BÔNUS: Planner de cuidados semanal",
+    ],
+    cta: "QUERO O KIT COMPLETO POR R$ 19,90",
+    note: "Order bump no Hotmart — adicione no checkout em 1 clique",
+  },
 };
 
 /* ----------------- SEÇÃO 12 — QUEBRA DE OBJEÇÕES (FAQ) ----------------- */
@@ -273,6 +297,36 @@ export const faq = {
   eyebrow: "Perguntas frequentes",
   title: "Algumas respostas antes de você decidir",
   items: [
+    {
+      question: "Quanto custa e quais são as formas de pagamento?",
+      answer:
+        "O e-book custa R$ 9,90 (pagamento único). Na Hotmart você paga com Pix, cartão de crédito (à vista ou parcelado conforme disponibilidade da plataforma), boleto ou carteira Hotmart. O preço é fixo e já inclui o acesso digital.",
+    },
+    {
+      question: "Como recebo o acesso? É imediato?",
+      answer:
+        "Sim. Após a confirmação do pagamento, você recebe por e-mail o acesso via Hotmart para baixar/ler o e-book. Pagamentos com Pix e cartão costumam liberar em minutos; boleto pode levar até 1-2 dias úteis para compensar.",
+    },
+    {
+      question: "Qual é o formato do e-book? Preciso imprimir?",
+      answer:
+        "É 100% digital (PDF otimizado). Não precisa imprimir: você lê no celular, tablet ou computador e consulta sempre que surgir uma dúvida no cultivo.",
+    },
+    {
+      question: "Por quanto tempo tenho acesso?",
+      answer:
+        "O acesso fica disponível na sua conta Hotmart. Você pode baixar e guardar o arquivo para consultar quando quiser — sem expiração.",
+    },
+    {
+      question: "Funciona no celular?",
+      answer:
+        "Sim. O arquivo é leitura digital compatível com celular, tablet e computador. Basta abrir o PDF no seu leitor preferido ou pelo app/área de membros da Hotmart.",
+    },
+    {
+      question: "Tem garantia? Como funciona o reembolso em 7 dias?",
+      answer:
+        "Sim. Compra com garantia de 7 dias pela Hotmart: se não ficar satisfeito, você solicita o reembolso direto na plataforma dentro desse prazo, sem burocracia.",
+    },
     {
       question: "Preciso ser experiente para entender o conteúdo?",
       answer:
@@ -311,8 +365,8 @@ export const finalCta = {
   headline: "Sua próxima orquídea pode encontrar um cuidador mais preparado.",
   subheadline:
     "Aprenda os princípios básicos para proporcionar melhores condições de cultivo às suas plantas.",
-  cta: "QUERO APRENDER A CUIDAR DAS MINHAS ORQUÍDEAS",
-  microtext: "Acesso digital • Leia no celular, tablet ou computador",
+  cta: unifiedCta,
+  microtext: "Acesso imediato por R$ 9,90 • Pagamento 100% seguro via Hotmart",
 };
 
 /* ----------------- RODAPÉ ----------------- */
