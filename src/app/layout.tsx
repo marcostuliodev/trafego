@@ -81,17 +81,45 @@ const inlineScripts = `
   };
 
   // Analytics — cliques em CTAs (data-analytics-event) + fbq + Clarity
-  // Removido listener sample_cta_click -> lead a pedido stakeholder; mantido apenas checkout_start
+  // Mapeamento manual pros eventos padrão do Meta Pixel.
+  function trackMetaEvent(eventName, payload) {
+    var map = {
+      hero_cta_click: 'InitiateCheckout',
+      offer_cta_click: 'InitiateCheckout',
+      final_cta_click: 'InitiateCheckout',
+      checkout_start: 'InitiateCheckout',
+      add_payment_info: 'AddPaymentInfo',
+      add_to_cart: 'AddToCart',
+      add_to_wishlist: 'AddToWishlist',
+      complete_registration: 'CompleteRegistration',
+      contact: 'Contact',
+      customize_product: 'CustomizeProduct',
+      donate: 'Donate',
+      find_location: 'FindLocation',
+      lead: 'Lead',
+      purchase: 'Purchase',
+      schedule: 'Schedule',
+      search: 'Search',
+      start_trial: 'StartTrial',
+      submit_application: 'SubmitApplication',
+      subscribe: 'Subscribe',
+      view_content: 'ViewContent'
+    };
+    var standardEvent = map[eventName];
+    if (!standardEvent || !window.fbq) return;
+    window.fbq('track', standardEvent, payload || {});
+  }
+
   document.addEventListener('click', function (e) {
     var el = e.target && e.target.closest ? e.target.closest('[data-analytics-event]') : null;
     if (!el) return;
     var eventName = el.getAttribute('data-analytics-event');
     var id = el.id || '';
+    var payload = { content_name: 'Orquideas Ebook', value: 9.90, currency: 'BRL', cta_id: id };
     dl().push({ event: eventName, cta_id: id });
     dl().push({ event: 'checkout_start', cta_id: id });
-    if (window.fbq) {
-      window.fbq('track', 'InitiateCheckout', { content_name: 'Orquideas Ebook', value: 9.90, currency: 'BRL', cta_id: id });
-    }
+    trackMetaEvent(eventName, payload);
+    trackMetaEvent('checkout_start', payload);
   });
 
   function initFaq() {
@@ -114,7 +142,9 @@ const inlineScripts = `
         if (entries[i].isIntersecting && !fired) {
           fired = true;
           dl().push({ event: 'view_content', content_name: 'offer', content_ids: ['ebook-orquideas-9-90'], value: 9.90, currency: 'BRL' });
-          if (window.fbq) window.fbq('track', 'ViewContent', { content_name: 'Orquideas Ebook', content_ids: ['ebook-orquideas-9-90'], value: 9.90, currency: 'BRL' });
+          if (window.fbq) {
+            window.fbq('track', 'ViewContent', { content_name: 'Orquideas Ebook', content_ids: ['ebook-orquideas-9-90'], value: 9.90, currency: 'BRL' });
+          }
           try { obs.disconnect(); } catch (e) {}
         }
       }
