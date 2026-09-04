@@ -14,8 +14,8 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const siteUrl = "https://ebook.especialorquideas.com";
-const metaPixelId = "1064624929647565";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ebook.especialorquideas.com";
+const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID || "";
 const clarityId = "";
 const heroVariantFlag = "";
 
