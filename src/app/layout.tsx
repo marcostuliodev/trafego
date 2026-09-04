@@ -15,7 +15,7 @@ const playfair = Playfair_Display({
 });
 
 const siteUrl = "https://ebook.especialorquideas.com";
-const metaPixelId = "1825338818848282";
+const metaPixelId = "1064624929647565";
 const clarityId = "";
 const heroVariantFlag = "";
 
