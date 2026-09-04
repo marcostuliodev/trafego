@@ -14,10 +14,10 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://orquideas.example.com";
-const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID?.trim() || "";
-const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID?.trim() || "";
-const heroVariantFlag = (process.env.NEXT_PUBLIC_HERO_VARIANT || "").trim().toUpperCase();
+const siteUrl = "https://ebook.especialorquideas.com";
+const metaPixelId = "1825338818848282";
+const clarityId = "";
+const heroVariantFlag = "";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

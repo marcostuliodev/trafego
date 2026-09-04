@@ -18,25 +18,19 @@ const DEFAULT_PRICE = "R$ 9,90";
 
 /** Preço âncora para ancoragem De R$47 → R$9,90 (frio). Default R$47 se stakeholder não informar. */
 const DEFAULT_ANCHOR_PRICE = "R$ 47,00";
-export const anchorPrice: string =
-  process.env.NEXT_PUBLIC_ANCHOR_PRICE?.trim() || DEFAULT_ANCHOR_PRICE;
+export const anchorPrice: string = DEFAULT_ANCHOR_PRICE;
 
-export const checkoutUrl: string =
-  process.env.NEXT_PUBLIC_CHECKOUT_URL?.trim() || DEFAULT_CHECKOUT_URL;
+export const checkoutUrl: string = DEFAULT_CHECKOUT_URL;
 
-export const price: string =
-  process.env.NEXT_PUBLIC_PRICE?.trim() || DEFAULT_PRICE;
+export const price: string = DEFAULT_PRICE;
 
 /** Preço do bundle/upsell futuro (order bump Hotmart). */
-export const bundlePrice: string =
-  process.env.NEXT_PUBLIC_BUNDLE_PRICE?.trim() || "R$ 19,90";
+export const bundlePrice: string = "R$ 19,90";
 
-export const siteUrl: string =
-  process.env.NEXT_PUBLIC_SITE_URL?.trim() || "https://ebook.especialorquideas.com.br";
+export const siteUrl: string = "https://ebook.especialorquideas.com";
 
 /** Microsoft Clarity ID — script condicional via NEXT_PUBLIC_CLARITY_ID */
-export const clarityId: string =
-  process.env.NEXT_PUBLIC_CLARITY_ID?.trim() || "";
+export const clarityId: string = "";
 
 /** O link do checkout é uma âncora interna (fallback de desenvolvimento)? */
 export const isInternalCheckout = checkoutUrl.startsWith("#");
@@ -47,5 +41,4 @@ export const isInternalCheckout = checkoutUrl.startsWith("#");
  * Trade-off documentado em src/components/Offer.tsx e DECISIONS.md
  * Para ativar: NEXT_PUBLIC_ENABLE_BUNDLE=true
  */
-export const enableBundle: boolean =
-  process.env.NEXT_PUBLIC_ENABLE_BUNDLE?.trim() === "true";
+export const enableBundle: boolean = false;
